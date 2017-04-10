@@ -65,12 +65,12 @@ def indicatorAndSignal(priceList):
                 DI = SignalStrategies.DirectionalIndicator(priceList, period, buySignal, sellSignal)
                 indicatorList, signalList = DI.execute()
 
-            break
+            return strategy, period, buySignal, sellSignal, indicatorList, signalList
         except Exception as error:
             print("Invalid @ indicatorAndSignal. Please try again.")
             raise error
 
-    return strategy, period, buySignal, sellSignal, indicatorList, signalList
+
 
 
 if __name__=='__main__':
