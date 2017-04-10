@@ -27,4 +27,4 @@ In this strategy, the analyzer will keep track of the indicator to see if the in
 
 ## FYI
 - This is an academic project for non-commercial use.
-- This is a polished version of the original one. The original one is finished in 02/20/2013.
+- This is a polished version of the original one. The original one was finished on 02/20/2013.
