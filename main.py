@@ -34,14 +34,9 @@ def executeProgram():
 def buildConnection():
     while True:
         try:
-            stockSymbol = 'AAPL'
-            startDate = '2016-01-01'
-            endDate = '2016-02-01'
-
-            #test
-            #stockSymbol = UserIOUtils.askForStockSymbol()
-            #startDate = UserIOUtils.askForStartDate()
-            #endDate = UserIOUtils.askForEndDate(startDate)
+            stockSymbol = UserIOUtils.askForStockSymbol()
+            startDate = UserIOUtils.askForStartDate()
+            endDate = UserIOUtils.askForEndDate(startDate)
 
             timeList, priceList = DownloadData.downloadDataFromServer(stockSymbol, startDate, endDate)
 
