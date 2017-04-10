@@ -4,7 +4,7 @@ This is a simple finance analyzer that uses data gathered from Yahoo Finance. It
 
 
 
-## About Indicatiors
+## About Indicators
 ### There are two indicators being used in this project: the 'Simple Moving Average Indicator', and the 'Directional Indicator'. 
 #### Simple Average Indicator 
 Simple Average Indicator keeps track of stock price in a specific period of time, get the average stock price, and compare the stock price of the last day of the period with the average. If the last day's stock price is above the average, we set the indicator as '+'; if the price falls below the average, we set the indicator as '-'. We leave it blank when two prices are the same.
