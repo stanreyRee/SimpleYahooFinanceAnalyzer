@@ -68,7 +68,7 @@ def indicatorAndSignal(priceList):
             return strategy, period, buySignal, sellSignal, indicatorList, signalList
         except Exception as error:
             print("Invalid @ indicatorAndSignal. Please try again.")
-            raise error
+            #raise error
 
 
 
