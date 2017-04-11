@@ -26,5 +26,5 @@ In this strategy, the analyzer will keep track of the indicator to see if the in
 
 
 ## FYI
-- This is an academic project for non-commercial use.
+- This is an academic project for non-commercial use. Special thanks to Prof. Alex Thornton(http://www.ics.uci.edu/~thornton/), a professor of University of California, Irvine.
 - This is a polished version of the original one. The original one was finished on 02/20/2013.
