@@ -3,55 +3,56 @@
 # Author: Yuhong Li
 #
 # Created on 02/20/2013
-# Final Edited on 04/10/2017
+# Final Edited on 09/07/2017
 # ----------------------------------------
+
 
 '''
     Calculate and return a list of indicators like '', '+', or '-'.
 '''
-def simpleMovingAverageIndicator(priceList, period):
-    averageList = ['' for i in range(period - 1)]
-    indicatorList = ['' for i in range(period - 1)]
-    periodEndDay = -1
+def simple_moving_average_indicator(price_list, period):
+    average_list = ['' for i in range(period - 1)]
+    indicator_list = ['' for i in range(period - 1)]
+    period_end_day = -1
 
-    days = len(priceList)
+    days = len(price_list)
 
-    for periodStartDay in range(days - period + 1):
-        periodEndDay = periodStartDay + period - 1
+    for period_start_day in range(days - period + 1):
+        period_end_day = period_start_day + period - 1
 
-        averageOfPeriod = sum(priceList[periodStartDay : periodEndDay + 1]) / period
-        averageList.append("%.2f" % averageOfPeriod)
+        average_of_period = sum(price_list[period_start_day : period_end_day + 1]) / period
+        average_list.append("%.2f" % average_of_period)
 
-        if priceList[periodEndDay] > averageOfPeriod:
-            indicatorList.append('+')
-        elif priceList[periodEndDay] < averageOfPeriod:
-            indicatorList.append('-')
+        if price_list[period_end_day] > average_of_period:
+            indicator_list.append('+')
+        elif price_list[period_end_day] < average_of_period:
+            indicator_list.append('-')
         else:
-            indicatorList.append('')
-    return averageList, indicatorList
+            indicator_list.append('')
+    return average_list, indicator_list
 
 
 '''
     Calculate and return a list of indicators like 0, n, or -n.
 '''
-def directionalIndicator(priceList, period):
-    indicatorList = []
-    tempList = [0] # first day contains 0.
-    days = len(priceList)
-    periodEndDay = -1
+def directional_indicator(price_list, period):
+    indicator_list = []
+    temp_list = [0] # first day contains 0.
+    days = len(price_list)
+    period_end_day = -1
 
-    for newDay in range(1, days):
-        if priceList[newDay] > priceList[newDay - 1]:
-            tempList.append(1)
-        elif priceList[newDay] < priceList[newDay - 1]:
-            tempList.append(-1)
+    for new_day in range(1, days):
+        if price_list[new_day] > price_list[new_day - 1]:
+            temp_list.append(1)
+        elif price_list[new_day] < price_list[new_day - 1]:
+            temp_list.append(-1)
         else:
-            tempList.append(0)
+            temp_list.append(0)
 
     for day in range(days):
         if day < period:
-            indicatorList.append(sum(tempList[: day + 1]))
+            indicator_list.append(sum(temp_list[: day + 1]))
         else:
-            indicatorList.append(sum(tempList[day - period + 1 : day + 1]))
+            indicator_list.append(sum(temp_list[day - period + 1 : day + 1]))
 
-    return indicatorList
+    return indicator_list
